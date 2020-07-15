@@ -15,7 +15,6 @@ public class CalculationMethods {
 
 	// find the winner of the game
 	static Player andTheWinnerIs(Game game) {
-		System.out.println("ICalculationMethods game " + game);
 		Player winnerIs = null;
 		int resultPlayer1 = (game.getToss1().getDice1()) + (game.getToss1().getDice2());
 		int resultPlayer2 = (game.getToss2().getDice1()) + (game.getToss2().getDice2());
@@ -27,7 +26,7 @@ public class CalculationMethods {
 				winnerIs = game.getPlayer2();
 			}
 		}
-		System.out.println("ICalculationMethods winnerIs " + winnerIs);
+		System.out.println("CalculationMethods winnerIs ---->" + winnerIs);
 		return winnerIs;
 	}
 
@@ -38,8 +37,11 @@ public class CalculationMethods {
 		if (winner != null) {
 			if (game.getPlayer1().equals(winner)) {
 				loser = game.getPlayer2();
+			} else if (game.getPlayer2().equals(winner)) {
+				loser = game.getPlayer1();
 			}
 		}
+		System.out.println("CalculationMethods andTheLoserIs ---->" + loser);
 		return loser;
 	}
 

@@ -33,10 +33,11 @@ public class GameService implements IGameService {
 	public Game createGame(Game game) {
 		game.setTimestamp(new Date());
 		Player winner = CalculationMethods.andTheWinnerIs(game);
-		Player loser = CalculationMethods.andTheLoserIs(game);
 		game.setWinner(winner);
+		Player loser = CalculationMethods.andTheLoserIs(game);
 		try {
 			iPlayerDao.getOne(winner.getId()).setWinrate(updatedWinrateWinner(winner));
+			iPlayerDao.getOne(winner.getId()).setTotalpoints(winner.getTotalpoints() + 1);
 		} catch (Exception e) {
 			System.out.println("NO WINNER");
 		}
@@ -72,7 +73,7 @@ public class GameService implements IGameService {
 				amountWonGames++;
 			}
 		}
-
+		System.out.println("amountWonGamesWinner returned: " + amountWonGames);
 		return amountWonGames;
 	}
 

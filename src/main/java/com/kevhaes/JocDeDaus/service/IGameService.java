@@ -16,6 +16,9 @@ public interface IGameService {
 
 	public Game createGame(Game game);
 
-	public List<Game> ShowAllGamesOfOnePlayerById(Long playerId);
+	/**
+	 * @return
+	 */
+	List<Game> showAllGames();
 
 }

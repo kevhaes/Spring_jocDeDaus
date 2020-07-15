@@ -7,7 +7,6 @@ package com.kevhaes.JocDeDaus.dto;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -29,20 +28,25 @@ public class Player {
 	private String name;
 
 	@OneToMany
-	@JoinColumn(name = "player_id")
+	@JoinColumn(name = "id")
 	List<Game> games;
 
+	private int totalpoints;
+	private double winrate;
+
 	/////////////// CONSTRUCTORS ///////////////
-	public Player(Long id, String name, List<Game> games) {
+	public Player(Long id, String name, int totalpoints) {
 		this.id = id;
 		this.name = name;
-		this.games = games;
+		this.totalpoints = totalpoints;
+		// this.setWinrate(ICalculationMethods.updateWinrate(this));
 	}
 
 	public Player() {
 	}
 
 /////////////// GETTERS & SETTERS ///////////////
+
 	/**
 	 * @return the id
 	 */
@@ -74,10 +78,7 @@ public class Player {
 	/**
 	 * @return the games
 	 */
-	//
-
 	@JsonIgnore
-	@OneToMany(fetch = FetchType.EAGER)
 	public List<Game> getGames() {
 		return games;
 	}
@@ -85,16 +86,43 @@ public class Player {
 	/**
 	 * @param games the games to set
 	 */
-
 	public void setGames(List<Game> games) {
 		this.games = games;
 	}
 
-/////////////// TOSTRING ///////////////
+	/**
+	 * @return the totalpoints
+	 */
+	public int getTotalpoints() {
+		return totalpoints;
+	}
 
+	/**
+	 * @param totalpoints the totalpoints to set
+	 */
+	public void setTotalpoints(int totalpoints) {
+		this.totalpoints = totalpoints;
+	}
+
+	/**
+	 * @return the winrate
+	 */
+	public double getWinrate() {
+		return winrate;
+	}
+
+	/**
+	 * @param winrate the winrate to set
+	 */
+	public void setWinrate(double winrate) {
+		this.winrate = winrate;
+	}
+
+/////////////// TOSTRING ///////////////
 	@Override
 	public String toString() {
-		return "Player [id=" + id + ", name=" + name + ", games=" + games + "]";
+		return "Player [id=" + id + ", name=" + name + ", games=" + games + ", totalpoints=" + totalpoints
+				+ ", winrate=" + winrate + "]";
 	}
 
 }

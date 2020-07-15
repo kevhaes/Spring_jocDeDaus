@@ -30,7 +30,6 @@ public class Toss {
 	private Long id;
 	private int dice1;
 	private int dice2;
-	// private Player player;
 
 	@CreationTimestamp
 	@Temporal(TemporalType.TIMESTAMP)
@@ -50,7 +49,6 @@ public class Toss {
 	}
 
 	public Toss() {
-
 	}
 
 	/////////////// METHODS ///////////////
@@ -115,32 +113,6 @@ public class Toss {
 	public void setRegistration(Date registration) {
 		this.registration = registration;
 	}
-
-//	/**
-//	 * @return the games
-//	 */
-//	public List<Game> getGames() {
-//		return games;
-//	}
-//
-//	/**
-//	 * @param games the games to set
-//	 */
-//	public void setGames(List<Game> games) {
-//		this.games = games;
-//	}
-
-	// set Player
-//	public void setPlayer(Player player) {
-//		this.player = player;
-//	}
-
-//	/**
-//	 * @return the player
-//	 */
-//	public Player getPlayer() {
-//		return player;
-//	}
 
 	/////////////// TOSTRING ///////////////
 	@Override

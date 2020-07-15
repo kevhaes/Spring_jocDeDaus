@@ -11,5 +11,5 @@ import com.kevhaes.JocDeDaus.dto.Toss;
  *
  */
 public interface ITossService {
-	Toss createToss(Toss toss);
+	Toss createToss();
 }

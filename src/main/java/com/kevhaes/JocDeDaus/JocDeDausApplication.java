@@ -10,4 +10,12 @@ public class JocDeDausApplication {
 		SpringApplication.run(JocDeDausApplication.class, args);
 	}
 
+//	@Configuration
+//	static class OktaOAuth2WebSecurityConfigurerAdapter extends WebSecurityConfigurerAdapter {
+//
+//		@Override
+//		protected void configure(HttpSecurity http) throws Exception {
+//			http.authorizeRequests().anyRequest().authenticated().and().oauth2ResourceServer().jwt();
+//		}
+//	}
 }

@@ -1,2 +1,2 @@
 # Spring_jocDeDaus
-ManytoMany spring project
+A rest API multiplayer dice game with Java/Spring Boot / Mysql/ Token (JWT)

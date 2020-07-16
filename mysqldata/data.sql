@@ -34,10 +34,10 @@ CONSTRAINT `player1_fk`  FOREIGN KEY (`player1_id`) REFERENCES `player` (`id`),
 PRIMARY KEY (`id`)  
 );
 
-insert into player(name,totalpoints)values('Eathan Frame',5);
-insert into player(name,totalpoints)values('Marianna Horne',9);
-insert into player(name,totalpoints)values('Zackary Farrington',3);
-insert into player(name,totalpoints)values('Angharad Mccormick',6);
+insert into player(name,totalpoints)values('Eathan Frame',10);
+insert into player(name,totalpoints, winrate)values('Marianna Horne',10,1);
+insert into player(name,totalpoints)values('Zackary Farrington',10);
+insert into player(name,totalpoints,winrate)values('Angharad Mccormick',10,1);
 
 insert into toss(dice1,dice2)values(1,2);
 insert into toss(dice1,dice2)values(5,2);
@@ -46,7 +46,7 @@ insert into toss(dice1,dice2)values(2,5);
 insert into toss(dice1,dice2)values(3,4);
 insert into toss(dice1,dice2)values(5,6);
 
-insert into game(player1_id,toss1_id,player2_id,toss2_id)values(1,1,2,2);
-insert into game(player1_id,toss1_id,player2_id,toss2_id)values(3,3,4,4);
+insert into game(player1_id,toss1_id,player2_id,toss2_id,winner_id)values(1,1,2,2,2);
+insert into game(player1_id,toss1_id,player2_id,toss2_id,winner_id)values(3,3,4,4,4);
 
 
